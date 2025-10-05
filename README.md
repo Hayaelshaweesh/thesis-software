@@ -48,5 +48,22 @@ thesis-software/
 2. Install dependencies:
 pip install -r requirements.txt
 
+3.Run predictions with:
+python src/main.py --input data/meta_dataset_sample.csv --top 5
+
+4. Example output:
+**Top 5 recommended imputation techniques:**
+1. KNN Imputer
+2. MissForest
+3. Mean Imputation
+4. MICE
+5. Median Imputation
 
 
+
+
+## 📘 Notes
+
+trained_model.pkl must be placed inside models/.
+meta_dataset_sample.csv is provided as an example input.
+For reproducibility, the original Colab notebook is included (thesis_notebook.ipynb).
