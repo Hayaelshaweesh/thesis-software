@@ -22,16 +22,12 @@ The system predicts the **top 5 most suitable imputation techniques** based on a
 
 
 thesis-software/
-│── src/
-│ ├── main.py # entry point
-│
+│── main.py # entry point
 │── data/
 │ ├── meta_dataset_sample.csv # example dataset
-│
 │── models/
 │ ├── trained_model.pkl # optional pre-trained classifier
-│
-│── requirements.txt
+││── requirements.txt
 │── README.md
 │── LICENSE
 
@@ -49,7 +45,8 @@ thesis-software/
 pip install -r requirements.txt
 
 3.Run predictions with:
-python src/main.py --input data/meta_dataset_sample.csv --top 5
+
+python src/main.py --input data/meta_dataset_sample.csv --model models/SHF_MVI_model.pkl --top 5
 
 4. Example output:
 **Top 5 recommended imputation techniques:**
@@ -64,6 +61,6 @@ python src/main.py --input data/meta_dataset_sample.csv --top 5
 
 ## 📘 Notes
 
-trained_model.pkl must be placed inside models/.
-meta_dataset_sample.csv is provided as an example input.
-For reproducibility, the original Colab notebook is included (thesis_notebook.ipynb).
+a. trained_model.pkl must be placed inside models/.
+b. meta_dataset_sample.csv is provided as an example input.
+c. For reproducibility, the original Colab notebook is included (thesis_notebook.ipynb).
