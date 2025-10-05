@@ -5,7 +5,7 @@ This script predicts the most suitable imputation techniques for a dataset based
 
 # Meta-Dataset Guided Technique Recommendation
 
-This repository contains the software developed as part of my MSc/PhD thesis.  
+This repository contains the software developed as part of my MSc thesis.  
 The system predicts the **top 5 most suitable imputation techniques** based on a given meta-dataset.
 
 ---
@@ -45,6 +45,8 @@ thesis-software/
    cd thesis-software
 
 
+2. Install dependencies:
+pip install -r requirements.txt
 
 
 
