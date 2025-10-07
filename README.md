@@ -22,15 +22,15 @@ The system predicts the **top 5 most suitable imputation techniques** based on a
 
 
 thesis-software/
-│── main.py # entry point
+│── src/
+│  │── shf_mvi_main_class.py # entry point
 │── data/
 │ ├── meta_dataset_sample.csv # example dataset
 │── models/
-│ ├── trained_model.pkl # optional pre-trained classifier
-││── requirements.txt
+│ ├── predict_top_k.pkl 
+│ ├── train_rf_model.pkl 
+│── requirements.txt
 │── README.md
-│── LICENSE
-
 
 
 ## ⚙️ Installation
@@ -42,25 +42,21 @@ thesis-software/
 
 
 2. Install dependencies:
-pip install -r requirements.txt
+pip install -r requirements.txt  
+pip install --only-binary=:all: -r requirements.txt
 
-3.Run predictions with:
 
-python src/main.py --input data/meta_dataset_sample.csv --model models/SHF_MVI_model.pkl --top 5
+3. Training:
+python models/train_rf_model.py
 
-4. Example output:
+
+4. Run predictions with:
+python src/shf_mvi_main_class.py --input data/meta_dataset_sample.csv --model models/SHF_MVI_model.pkl --encoder models/encoder.pkl --scaler models/scaler.pkl --columns models/column_info.pkl --top 5
+
+5. Example output:
 **Top 5 recommended imputation techniques:**
 1. KNN Imputer
 2. MissForest
 3. Mean Imputation
 4. MICE
 5. Median Imputation
-
-
-
-
-## 📘 Notes
-
-a. trained_model.pkl must be placed inside models/.
-b. meta_dataset_sample.csv is provided as an example input.
-c. For reproducibility, the original Colab notebook is included (thesis_notebook.ipynb).
